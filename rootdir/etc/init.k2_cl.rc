@@ -1,4 +1,4 @@
-import init.k2_ul.usb.rc
+import init.k2_cl.usb.rc
 
 on init
     mkdir /storage 0050 system sdcard_r
@@ -22,7 +22,7 @@ on fs
     mkdir /firmware_q6 0771 system system
 
     # mount all mmc partitions
-    mount_all /fstab.k2_ul
+    mount_all /fstab.k2_cl
 
     mkdir /data/tombstones 0771 system system
     symlink /data/tombstones /tombstones
@@ -35,7 +35,7 @@ on fs
     exec /system/bin/sh /system/etc/init.qcom.radio_links.sh
     exec /system/bin/sh /system/etc/init.qcom.q6_links.sh
 
-    mount_all /remount.k2_ul
+    mount_all /remount.k2_cl
 on post-fs-data
     # double check perms and set owner
     chown root root /devlog
