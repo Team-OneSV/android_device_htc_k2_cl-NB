@@ -19,7 +19,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # common 8960 configs
 $(call inherit-product, device/htc/msm8960-common/msm8960.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/htc/k2_ul/overlay
+DEVICE_PACKAGE_OVERLAYS += device/htc/k2_cl/overlay
 
 # Bootanimation
 TARGET_SCREEN_HEIGHT := 800
@@ -27,11 +27,11 @@ TARGET_SCREEN_WIDTH := 480
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.k2_ul \
-    init.k2_ul.rc \
-    init.k2_ul.usb.rc \
-    remount.k2_ul \
-    ueventd.k2_ul.rc
+    fstab.k2_cl \
+    init.k2_cl.rc \
+    init.k2_cl.usb.rc \
+    remount.k2_cl \
+    ueventd.k2_cl.rc
 
 # Qualcomm scripts
 PRODUCT_COPY_FILES += \
@@ -120,7 +120,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.k2_ul:recovery/root/fstab.k2_ul
+    $(LOCAL_PATH)/rootdir/etc/fstab.k2_ul:recovery/root/fstab.k2_cl
 
 # Recovery
 PRODUCT_PACKAGES += \
@@ -144,4 +144,4 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # call the proprietary setup
-$(call inherit-product-if-exists, vendor/htc/k2_ul/k2_ul-vendor.mk)
+$(call inherit-product-if-exists, vendor/htc/k2_cl/k2_cl-vendor.mk)
