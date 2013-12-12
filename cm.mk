@@ -1,8 +1,8 @@
 # Specify phone tech before including full_phone
-$(call inherit-product, vendor/cm/config/gsm.mk)
+$(call inherit-product, vendor/cm/config/cdma.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := k2_ul
+PRODUCT_RELEASE_NAME := k2_cl
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 800
@@ -12,11 +12,11 @@ TARGET_SCREEN_WIDTH := 480
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/htc/k2_ul/device.mk)
+$(call inherit-product, device/htc/k2_cl/device.mk)
 
 # Device naming
-PRODUCT_DEVICE := k2_ul
-PRODUCT_NAME := cm_k2_ul
+PRODUCT_DEVICE := k2_cl
+PRODUCT_NAME := cm_k2_cl
 PRODUCT_BRAND := htc
 PRODUCT_MODEL := One SV
 PRODUCT_MANUFACTURER := HTC
