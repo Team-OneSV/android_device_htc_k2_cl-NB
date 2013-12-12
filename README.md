@@ -1,4 +1,4 @@
-device_cm11
+android_device_htc_k2_cl-NEW BASE
 ===========
 
-device tree k2_ul cm11
+CM11 Device Tree for Boost HTC One SV
