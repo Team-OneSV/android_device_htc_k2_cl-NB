@@ -33,19 +33,19 @@
 # TARGET_BOARD_INFO_FILE ?= device/htc/k2_ul/board-info.txt
 
 # Include Path
-TARGET_SPECIFIC_HEADER_PATH := device/htc/k2_ul/include
+TARGET_SPECIFIC_HEADER_PATH := device/htc/k2_cl/include
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := k2_ul
+TARGET_BOOTLOADER_BOARD_NAME := k2_cl
 TARGET_BOARD_PLATFORM := msm8960
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80600000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=k2_ul androidboot.selinux=permissive 
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=k2_cl androidboot.selinux=permissive 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01408000
 TARGET_KERNEL_SOURCE := kernel/htc/msm8960
-TARGET_KERNEL_CONFIG := k2_ul_defconfig
+TARGET_KERNEL_CONFIG := k2_cl_defconfig
 
 # Audio
 BOARD_USES_FLUENCE_INCALL := true
@@ -54,8 +54,8 @@ BOARD_HAVE_HTC_CSDCLIENT := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/k2_ul/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/htc/k2_ul/bluetooth/libbt_vndcfg.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/k2_cl/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/htc/k2_cl/bluetooth/libbt_vndcfg.txt
 BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := false
 
 # Camera
@@ -95,7 +95,7 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16776704
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1426062336
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1241513472
 BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_VOLD_MAX_PARTITIONS := 36
+BOARD_VOLD_MAX_PARTITIONS := 38
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
@@ -103,7 +103,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/
 
 # Recovery
 #TARGET_PREBUILT_RECOVERY_KERNEL := device/htc/totemc2/recovery/kernel
-TARGET_RECOVERY_FSTAB := device/htc/k2_ul/rootdir/etc/fstab.k2_ul
+TARGET_RECOVERY_FSTAB := device/htc/k2_cl/rootdir/etc/fstab.k2_cl
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 
@@ -119,14 +119,15 @@ TW_INCLUDE_JB_CRYPTO := true
 #mmcblk0p22: 000ffa00 00000200 "misc"
 #mmcblk0p21: 00fffe00 00000200 "recovery"
 #mmcblk0p20: 01000000 00000200 "boot"
-#mmcblk0p33: 67fffc00 00000200 "system"
+#mmcblk0p35: 54fffc00 00000200 "system"
 #mmcblk0p29: 00140200 00000200 "local"
-#mmcblk0p34: 0ffffe00 00000200 "cache"
-#mmcblk0p35: 97fffe00 00000200 "userdata"
+#mmcblk0p36: 0dfffe00 00000200 "cache"
+#mmcblk0p37: 49fffe00 00000200 "userdata"
 #mmcblk0p25: 01400000 00000200 "devlog"
 #mmcblk0p27: 00040000 00000200 "pdata"
-#mmcblk0p36: 27be00000 00000200 "fat"
+#mmcblk0p38: 1097fe000 00000200 "fat"
 #mmcblk0p30: 00010000 00000200 "extra"
+#mmcblk0p32: 01900000 00000200 "carrier"
 #mmcblk0p16: 02d00000 00000200 "radio"
 #mmcblk0p17: 00a00000 00000200 "adsp"
 #mmcblk0p15: 00100000 00000200 "dsps"
@@ -134,5 +135,6 @@ TW_INCLUDE_JB_CRYPTO := true
 #mmcblk0p19: 007ffa00 00000200 "radio_config"
 #mmcblk0p23: 00400000 00000200 "modem_st1"
 #mmcblk0p24: 00400000 00000200 "modem_st2"
-#mmcblk0p31: 00100000 00000200 "cdma_record"
-#mmcblk0p32: 06069e00 00000200 "reserve" 
+#mmcblk0p31: 00040000 00000200 "skylink"
+#mmcblk0p33: 00100000 00000200 "cdma_record"
+
